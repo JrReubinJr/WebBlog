@@ -44,10 +44,12 @@ class User(object):
 
     @staticmethod
     def login(user_email):
+        print(user_email)
         session['email'] = user_email
+        print(user_email)
 
     @staticmethod
-    def loggout():
+    def logout():
         session['email'] = None
 
     def get_blogs(self):
@@ -76,4 +78,4 @@ class User(object):
         }
 
     def save_to_mongo(self):
-        Database.insert('users', self.json())
+        Database.insert("users", self.json())
