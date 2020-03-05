@@ -3,7 +3,7 @@
 <div class="container page-form">
     <h2>{{ blog_title }}</h2>
     <a href="/posts/new/{{ blog_id }}"><button class="btn btn-primary">New Post</button></a>
-    {% if post|length > 0 %}
+    {% if posts|length > 0 %}
         {% for post in posts %}
             <h3>{{ post.title }}</h3>
             <p>{{ post.content }}</p>
@@ -12,6 +12,6 @@
         {% endfor %}
     {% else %}
         <h4>There are not any posts yet.</h4>
-    {% endif $}
+    {% endif %}
 </div>
 {% endblock %}

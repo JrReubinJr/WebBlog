@@ -62,7 +62,8 @@ def blog_posts(blog_id):
     print(blog_id)
     blog = Blog.from_mongo(blog_id)
     posts = blog.get_posts()
-
+    print(str(posts) + "posts")
+    #length = print(len(posts))
     return render_template('posts.html', posts=posts, blog_title=blog.title, blog_id=blog_id)
 
 @app.route('/blogs/new', methods=['POST', 'GET'])

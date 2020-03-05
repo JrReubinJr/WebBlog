@@ -44,6 +44,7 @@ class Blog(object):
         blog_data = Database.find_one(collection='blogs',
                                        query={'_id':id})
         print(blog_data == None)
+        print(blog_data)
         return cls(**blog_data)
 
     @classmethod

@@ -32,6 +32,6 @@ class Post(object):
         post_data = Database.find_one(collection='posts', query={'_id': id})
         return cls(**post_data)
 
-    @staticmethod
-    def from_blog(id):
-        return [post for post in Database.find_one(collection='posts', query={'blog_id': id})]
+    @classmethod
+    def from_blog(cls, id):
+        return [post for post in Database.find(collection='posts', query={'blog_id': id})]
